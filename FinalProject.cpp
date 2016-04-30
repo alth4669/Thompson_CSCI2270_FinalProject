@@ -16,6 +16,7 @@ regarding previous trips for reference.
 #include "Graph.h"
 #include "TravelTracker.h"
 #include "Utilities.h"
+#include <string>
 
 using namespace std;
 
