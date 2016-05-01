@@ -1,5 +1,7 @@
 ReadMe file for the final project in CSCI 2270 Data Structures at CU Boulder.
 
+# Thompson_CSCI2270_FinalProject
+
 Most recent update: 4/27/2016
 
 Group Members: Alex Thompson
@@ -23,6 +25,12 @@ to be formatted.
 
 How to Run:
 
+The best way to run this program is to extract the files of FinalProject-master.zip into a new folder. The executable is located at:
+
+FinalProject-master/bin/Debug/FinalProject
+
+along with a sample .txt file you can use for testing. (All other files in this repository are the raw code found in the .zip file.)
+
 This program is run using command line arguments. The second command line argument must be the file name of a .txt file containing the
 adjacency matrix for the desired graph. If this text file is not formatted properly, the program will be unable to read the data properly
 into the graph, most likely causing a crash. Additionally, make sure the executable is from "FinalProject.cpp". The text file needs to be formatted in the following ways:
@@ -37,7 +45,7 @@ necessary for the graph to be created successfully.
 When the program launches successfully, the user will be prompted by a welcome message and asked to input a starting location. It is important
 to note that you cannot progress any further than this prompt unless you enter a valid city. Valid cities will be the city names listed in
 the text file. Once you have successfully specified a starting location, you will be prompted with a very intuitive menu interface with multiple
-options available. Simple input the integer value of the option you want to select.
+options available. Simply input the integer value of the option you want to select.
 
 Dependencies:
 
@@ -68,3 +76,4 @@ When I was initially coming up with this idea, I thought it would be interesting
 could be utilized for travel. I thought there could be multiple edges between two vertices so long as the edges were all of different types or modes.
 This could open the door for further methods of optimizing/tracking travel. You could track the individual distances logged by each mode of transportation
 and take the costs of various modes into effect as well. Unfortunately, I was not able to implement this in time.
+
