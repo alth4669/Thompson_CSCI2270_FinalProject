@@ -100,27 +100,34 @@ vector<vertex*> Graph::bellmanFordSP(string startingCity, string endingCity)
 {
     vertex* foundCity1 = findVertex(startingCity);
     vertex* foundCity2 = findVertex(endingCity);
-    if ((foundCity1 == NULL) | (foundCity2 == NULL))
+
+    if ((foundCity1 == NULL) || (foundCity2 == NULL))
     {
         cout << "One or more cities doesn't exist" << endl;
     }
     else
     {
         vector<vertex*> shortestPath;
+
         for (int i=0; i<vertices.size(); i++)
         {
             vertices[i]->distance = INT_MAX;
         }
+
         foundCity1->distance = 0;
-        for (int j=0; j<vertices.size(); j++)
+
+        for(int i=1; i<vertices.size(); i++)
         {
-            vertex* temp = vertices[j];
-            for (int k=0; k<(temp->adj).size(); k++)
+            for (int j=0; j<vertices.size(); j++)
             {
-                if (  (temp->distance + (temp->adj)[k].weight) < ((temp->adj)[k].v)->distance  )
+                vertex* temp = vertices[j];
+                for (int k=0; k < temp->adj.size(); k++)
                 {
-                    ((temp->adj)[k].v)->distance = temp->distance + (temp->adj)[k].weight;
-                    ((temp->adj)[k].v)->parent = temp;
+                    if (temp->distance != INT_MAX && (temp->distance + temp->adj[k].weight < temp->adj[k].v->distance))
+                    {
+                        temp->adj[k].v->distance = temp->distance + temp->adj[k].weight;
+                        temp->adj[k].v->parent = temp;
+                    }
                 }
             }
         }
